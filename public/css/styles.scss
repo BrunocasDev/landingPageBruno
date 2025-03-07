@@ -1,0 +1,369 @@
+@mixin breakpoint-mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 45px;
+    margin: initial;
+    color: #1a3954;
+    width: fit-content;
+    margin-inline: auto;
+
+    &::after {
+        margin-top: 0.5rem;
+        content: "";
+        display: block;
+        width: 150px;
+        height: 5px;
+        background-color: #ee2e2a;
+        border-radius: 2px;
+        margin-bottom: 2rem;
+
+        @include breakpoint-mobile {
+            margin-inline: auto;
+        }
+    }
+}
+
+.hero-section {
+    background: url("../images/Maskgroup.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 650px;
+    padding-bottom: 100px;
+    position: relative;
+
+    @include breakpoint-mobile {
+        background-position: bottom center;
+    }
+
+    &::before {
+        content: "";
+        background: url("../images/black_banner_desktop.png") center/cover
+            no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+        margin-top: 20px;
+
+        @include breakpoint-mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text {
+            @include breakpoint-mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo {
+                position: initial;
+            }
+
+            > img {
+                position: absolute;
+                max-height: 250px;
+                width: auto;
+                bottom: -140px;
+                right: 430px;
+
+                @include breakpoint-mobile {
+                    position: initial;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            h1 {
+                max-width: 500px;
+                font-weight: bold;
+                margin-top: 3rem;
+                font-size: 4rem;
+
+                @include breakpoint-mobile {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    margin-inline: auto;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    .form {
+        margin-top: 10rem;
+        @include breakpoint-mobile {
+            margin-top: 0;
+        }
+
+        .info-box {
+            background-color: white;
+            width: 345px;
+            border-radius: 20px;
+            border: 2px solid #000000;
+            text-align: center;
+            padding: 20px;
+
+            .info-text {
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 35px;
+                letter-spacing: 0%;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            .info-text-bold {
+                font-weight: 700;
+                font-size: 35px;
+                line-height: 40px;
+            }
+        }
+    }
+}
+
+.for-whom-section {
+    margin-inline: auto;
+
+    .container-fluid {
+        > .row {
+            align-items: center;
+
+            @include breakpoint-mobile {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    .img {
+        padding-left: 0;
+    }
+
+    .for-whom-info {
+        max-width: 680px;
+
+        @include breakpoint-mobile {
+            margin-top: 2rem;
+            padding-left: 3rem;
+        }
+        > h2 {
+            margin-left: auto;
+            font-weight: 700;
+            font-size: 45px;
+            margin: initial;
+            color: #1a3954;
+
+            @include breakpoint-mobile {
+                margin: auto;
+            }
+        }
+
+        .custom-list {
+            display: grid;
+            gap: 0.25rem;
+
+            li {
+                padding-left: 30px;
+                background-image: url("../images/icon-speak-up1.svg");
+
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 20px 20px;
+
+                line-height: 35px;
+                margin-bottom: 10px;
+            }
+
+            .highlight {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+.advantages-section {
+    padding: 0px 0px 60px;
+
+    .title-section {
+        position: relative;
+        text-align: center;
+
+        span {
+            font-weight: 400;
+            font-size: 45px;
+            color: #1a3954;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &::after {
+            margin-inline: auto;
+        }
+    }
+
+    .advantages-list {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        @include breakpoint-mobile {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    .advantages-list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-weight: 700;
+        font-size: 16px;
+        color: #ee2e2a;
+        padding: 20px;
+        flex: 1;
+        width: 157px;
+        height: 149px;
+
+        @include breakpoint-mobile {
+            width: 100%;
+        }
+    }
+
+    .advantages-list li img {
+        width: 95px;
+        height: 95px;
+        top: 1548px;
+        left: 186px;
+    }
+}
+
+.testimonials-section {
+    background-color: #f4f4f4;
+    padding: 60px 0;
+
+    .title-section {
+        position: relative;
+        text-align: center;
+
+        span {
+            font-weight: 400;
+            font-size: 45px;
+            color: #1a3954;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &::after {
+            margin-inline: auto;
+        }
+    }
+
+    .testimonial-author {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+}
+
+#carouselExampleIndicators {
+    .carousel-item {
+        min-height: 320px;
+    }
+
+    .carousel-indicators {
+        margin-bottom: -1rem;
+        button {
+            background-color: #ee2e2a !important;
+        }
+    }
+}
+
+footer {
+    .test-your-english-section {
+        background-color: #363636;
+        padding: 60px 0;
+
+        .section-title {
+            width: auto;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+
+            @include breakpoint-mobile {
+                font-size: 2rem;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .section-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+
+            @include breakpoint-mobile {
+                font-size: 1rem;
+            }
+        }
+
+        .btn {
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+            align-items: center;
+            background-color: #ee2e2a;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: darken(#ee2e2a, 10%);
+            }
+        }
+    }
+
+    .footer-section img {
+        width: 180px;
+        padding: 10px;
+    }
+
+    .form-info {
+        text-align: left;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
